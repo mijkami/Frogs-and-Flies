@@ -30,13 +30,22 @@ class FrogController extends Controller
                 $matrix[$row][$col] = "is-info";
             }
         }
-        // Injection test d'un élément vert dans la matrice avec des coordonnées précises
-        $matrix[8][5] = "is-success";
+
+        // $matrix[6][4] = "is-success";
 
         return $matrix;
     }
 
 
+    public function frogInit()
+    {
+        global $board;
+        // Injection test d'un élément vert dans la matrice avec des coordonnées précises
+        // $frogPos = $this->board[$rowFrog][$colFrog] = "is-success";
+        $this->newFrog = $this->$board[4][8] = "is-success";
+
+        return $newFrog;
+    }
 
     public function index()
     {
@@ -45,9 +54,14 @@ class FrogController extends Controller
         // $colGrid = nombre de colonnes à afficher
         $rowGrid = 10;
         $colGrid = 10;
+        $rowFrog = 6;
+        $colFrog = 7;
 
 
         $board = $this->generate($rowGrid, $colGrid);
+        // $newFrog = $this->frogInit($rowFrog, $colFrog);
+        $newFrog = $board[4][8] = "is-success";
+        // $this->frogInit();
 
         return view('pages.index', compact('rowGrid', 'colGrid', 'board'));
 
