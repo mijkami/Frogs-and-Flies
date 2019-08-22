@@ -10,7 +10,8 @@
 
         <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
 
-        <!-- Styles -->
+        <!-- Styles : Bulma CSS-->
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
